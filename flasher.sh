@@ -7,6 +7,9 @@ fi
 
 lsblk 
 echo ""
+echo "Place this file in the /poky/build/tmp/deploy/images/raspberrypi3 direcroy of your yocto build"
+echo ""
+echo ""
 echo "Type the device on /dev/ that belongs to the SD card, followed by [ENTER]:"
 echo "don't type /dev/ before it, ie, just sde"
 echo ""
