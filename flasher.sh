@@ -24,7 +24,7 @@ read proceed
 
 if [ "$proceed" != "yes" ];
    then
-   echo "User said wrong device was selected, quitting!!!"
+   echo "User said wrong device was selected, quitting!!!!"
 fi
 
 
