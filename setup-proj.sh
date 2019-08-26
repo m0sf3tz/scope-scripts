@@ -40,7 +40,7 @@ git clone git://git.yoctoproject.org/poky
 cd poky 
 
 git clone git://git.yoctoproject.org/meta-raspberrypi
-
+git clone https://github.com/m0sf3tz/meta-kernel.git
 
 #must source the first time we run the enviorment to pull in the layers.conf
 source oe-init-build-env
