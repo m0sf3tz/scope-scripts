@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$EUID" -eq 0 ]
+  then echo "Can't run as root"
+  exit
+fi
+
 function print_space() {
     for i in {1..3}
     do 
