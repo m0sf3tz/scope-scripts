@@ -36,7 +36,9 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-cat
+
+echo "Now cloning!"
+
 #we need this later for setting up the layers
 ROOT=$PWD
 	
@@ -66,6 +68,8 @@ sed -i "/MACHINE ??= \"qemux86-64\"/c  #MACHINE ??= \"qemux86-64\"" local.conf
 sed -i "/#MACHINE ??= \"qemux86-64\"/a  MACHINE ??= \"raspberrypi3\"" local.conf
 
 #setup build/conf/local.conf to include kernel modules
-echo "# Add kernel modules (all the camera stuff is currently modules"
+echo "" >> local.conf
+echo "" >> local.conf
+echo "# Add kernel modules (all the camera stuff is currently modules" >> local.conf
 echo "CORE_IMAGE_EXTRA_INSTALL += \" kernel-modules\"" >> local.conf
 
