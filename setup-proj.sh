@@ -31,7 +31,7 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-
+cat
 #we need this later for setting up the layers
 ROOT=$PWD
 	
@@ -59,4 +59,8 @@ sed -i "/BBLAYERS / a\  $ROOT\/poky\/meta-raspberrypi \\\\" bblayers.conf
 # C) update the machine type to raspberrypi
 sed -i "/MACHINE ??= \"qemux86-64\"/c  #MACHINE ??= \"qemux86-64\"" local.conf
 sed -i "/#MACHINE ??= \"qemux86-64\"/a  MACHINE ??= \"raspberrypi3\"" local.conf
+
+#setup build/conf/local.conf to include kernel modules
+echo "# Add kernel modules (all the camera stuff is currently modules"
+echo "CORE_IMAGE_EXTRA_INSTALL += \" kernel-modules\"" >> local.conf
 
