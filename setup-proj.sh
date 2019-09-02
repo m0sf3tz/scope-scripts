@@ -57,15 +57,19 @@ cd ${ROOT}/poky/build/conf
 
 #the next few files will open ..poky/build/conf/local.conf and ..poky/build/conf/bblayers.conf and edit them to
 #include ... (note that full link is required, hence why we stored the ROOT directoy earlier...
+
 # A) meta-kernel (contains kernel changes)
 # B) meta-rassbery (contains rasberry-pi layer)
+# B) meta-pkgs  (contains things like vim and bash)
 
 sed -i "/BBLAYERS / a\  $ROOT\/poky\/meta-kernel \\\\" bblayers.conf 
 sed -i "/BBLAYERS / a\  $ROOT\/poky\/meta-raspberrypi \\\\" bblayers.conf 
+sed -i "/BBLAYERS / a\  $ROOT\/poky\/meta-pkgs \\\\" bblayers.conf 
 
 # C) update the machine type to raspberrypi
 sed -i "/MACHINE ??= \"qemux86-64\"/c  #MACHINE ??= \"qemux86-64\"" local.conf
 sed -i "/#MACHINE ??= \"qemux86-64\"/a  MACHINE ??= \"raspberrypi3\"" local.conf
+
 
 #setup build/conf/local.conf to include kernel modules
 echo "" >> local.conf
