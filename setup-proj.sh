@@ -37,7 +37,7 @@ while true; do
     esac
 done
 
-echo "Now cloning!"
+echo "Now will start to clone all the requires repositories!"
 
 #we need this later for setting up the layers
 ROOT=$PWD
@@ -48,6 +48,7 @@ cd poky
 
 git clone git://git.yoctoproject.org/meta-raspberrypi
 git clone https://github.com/m0sf3tz/meta-kernel.git
+git clone https://github.com/m0sf3tz/meta-pkgs.git
 
 #must source the first time we run the enviorment to pull in the layers.conf
 source oe-init-build-env
